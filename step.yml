@@ -1,0 +1,66 @@
+title: |-
+  open-vpn
+summary: |
+  Connect to OpenVPN Server
+description: |
+  Connect to OpenVPN Server
+website: https://github.com/justice3120/bitrise-step-open-vpn
+source_code_url: https://github.com/justice3120/bitrise-step-open-vpn
+support_url: https://github.com/justice3120/bitrise-step-open-vpn/issues
+host_os_tags:
+  - osx-10.10
+  - ubuntu-16.04
+
+type_tags:
+  - access-control
+
+is_requires_admin_user: true
+is_always_run: false
+is_skippable: false
+run_if: ""
+
+deps:
+  brew:
+  - name: git
+  - name: wget
+  apt_get:
+  - name: git
+  - name: wget
+
+
+toolkit:
+  bash:
+    entry_file: step.sh
+
+inputs:
+  - host:
+    opts:
+      title: "Open VPN Server Host"
+      summary: "Open VPN Server Host"
+      description: |
+        ex1. 111.111.111.111
+        ex2. hoge.com
+      is_expand: true
+      is_required: true
+      value_options: []
+  - ca_crt:
+    opts:
+      title: "Base64 encorded CA Certificate"
+      summary: "Base64 encorded CA Certificate"
+      is_expand: true
+      is_required: true
+      value_options: []
+  - client_crt:
+    opts:
+      title: "Base64 encorded Client Certificate"
+      summary: "Base64 encorded Client Certificate"
+      is_expand: true
+      is_required: true
+      value_options: []
+  - client_key:
+    opts:
+      title: "Base64 encorded Client Private Key"
+      summary: "Base64 encorded Client Private Key"
+      is_expand: true
+      is_required: true
+      value_options: []
