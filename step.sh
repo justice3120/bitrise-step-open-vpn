@@ -25,7 +25,7 @@ case "$OSTYPE" in
         break
       fi
       if [ $COUNT -eq $RETRY_COUNT ]; then
-        echo "VPN connection failed!" > &2
+        echo "VPN connection failed!"
         exit 1
       fi
       COUNT=`expr $COUNT + 1`
