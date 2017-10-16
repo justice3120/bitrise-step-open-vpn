@@ -25,13 +25,12 @@ cert client.crt
 key client.key
 EOF
 
-    cat /etc/openvpn/client.conf
-    cat /etc/openvpn/ca.crt
-    cat /etc/openvpn/client.crt
-    cat /etc/openvpn/client.key
+    ls -l /etc/openvpn
 
-    service openvpn start client > /dev/null 2>&1
-    sleep 5
+    service openvpn start client
+    sleep 10
+
+    tail -100 /var/log/syslog
 
     ifconfig
     if ifconfig | grep utun0 > /dev/null
