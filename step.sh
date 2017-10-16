@@ -5,9 +5,9 @@ case "$OSTYPE" in
   linux*)
     echo "Configuring for Ubuntu"
 
-    echo ${ca_crt} | base64 -D -o /etc/openvpn/ca.crt > /dev/null 2>&1
-    echo ${client_crt} | base64 -D -o /etc/openvpn/client.crt > /dev/null 2>&1
-    echo ${client_key} | base64 -D -o /etc/openvpn/client.key > /dev/null 2>&1
+    echo ${ca_crt} | openssl enc -d -base64 > /etc/openvpn/ca.crt
+    echo ${client_crt} | openssl enc -d -base64 > /etc/openvpn/client.crt
+    echo ${client_key} | openssl enc -d -base64 > /etc/openvpn/client.key
 
     ls /etc/openvpn/
 
