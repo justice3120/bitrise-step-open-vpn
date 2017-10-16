@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -eux
 
 case "$OSTYPE" in
   linux*)
