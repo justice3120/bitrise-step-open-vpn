@@ -27,7 +27,7 @@ cert client.crt
 key client.key
 EOF
 
-    service openvpn start /dev/null 2>&1
+    service openvpn start client > /dev/null 2>&1
     sleep 5
 
     ifconfig -l
