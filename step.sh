@@ -30,8 +30,6 @@ EOF
     service openvpn start client
     sleep 10
 
-    tail -100 /var/log/syslog
-
     ifconfig
     if ifconfig | grep utun0 > /dev/null
     then
