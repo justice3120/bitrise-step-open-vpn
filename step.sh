@@ -25,7 +25,10 @@ cert client.crt
 key client.key
 EOF
 
-    ls /etc/openvpn/
+    cat /etc/openvpn/client.conf
+    cat /etc/openvpn/ca.crt
+    cat /etc/openvpn/client.crt
+    cat /etc/openvpn/client.key
 
     service openvpn start client > /dev/null 2>&1
     sleep 5
