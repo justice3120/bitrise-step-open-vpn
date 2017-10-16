@@ -30,8 +30,8 @@ EOF
     service openvpn start client > /dev/null 2>&1
     sleep 5
 
-    /sbin/ifconfig -l
-    if /sbin/ifconfig -l | grep utun0 > /dev/null
+    ifconfig -l
+    if ifconfig -l | grep utun0 > /dev/null
     then
       echo "VPN connection succeeded"
     else

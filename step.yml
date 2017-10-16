@@ -24,6 +24,7 @@ deps:
   - name: openvpn
   apt_get:
   - name: openvpn
+  - name: net-tools
 
 
 toolkit:
