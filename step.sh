@@ -17,7 +17,11 @@ case "$OSTYPE" in
 
     sleep 5
 
-    if ifconfig -l | grep utun0 > /dev/null; then
+    ifconfig -l
+    if ifconfig -l | grep utun0 > /dev/null
+    then
+      echo "VPN connection succeeded"
+    else
       echo "VPN connection failed!"
       exit 1
     fi
