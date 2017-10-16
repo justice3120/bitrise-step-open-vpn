@@ -21,12 +21,8 @@ run_if: ""
 
 deps:
   brew:
-  - name: git
-  - name: wget
   - name: openvpn
   apt_get:
-  - name: git
-  - name: wget
   - name: openvpn
 
 
