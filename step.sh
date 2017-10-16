@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eux
+set -eu
 
 case "$OSTYPE" in
   linux*)
@@ -25,13 +25,10 @@ cert client.crt
 key client.key
 EOF
 
-    ls -l /etc/openvpn
+    service openvpn start client > /dev/null 2>&1
+    sleep 5
 
-    service openvpn start client
-    sleep 10
-
-    ifconfig
-    if ifconfig | grep utun0 > /dev/null
+    if ifconfig | grep tun0 > /dev/null
     then
       echo "VPN connection succeeded"
     else
