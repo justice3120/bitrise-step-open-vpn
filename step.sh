@@ -13,7 +13,7 @@ case "$OSTYPE" in
 client
 dev tun
 proto udp
-remote ${host} 1194
+remote ${host} ${port}
 resolv-retry infinite
 nobind
 persist-key
@@ -43,7 +43,7 @@ EOF
     echo ${client_crt} | base64 -D -o client.crt > /dev/null 2>&1
     echo ${client_key} | base64 -D -o client.key > /dev/null 2>&1
 
-    sudo openvpn --client --dev tun --proto udp --remote ${host} 1194 --resolv-retry infinite --nobind --persist-key --persist-tun --comp-lzo --verb 3 --ca ca.crt --cert client.crt --key client.key > /dev/null 2>&1 &
+    sudo openvpn --client --dev tun --proto udp --remote ${host} ${port} --resolv-retry infinite --nobind --persist-key --persist-tun --comp-lzo --verb 3 --ca ca.crt --cert client.crt --key client.key > /dev/null 2>&1 &
 
     sleep 5
 

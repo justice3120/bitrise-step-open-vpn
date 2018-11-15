@@ -1,5 +1,5 @@
 title: |-
-  open-vpn
+  Connect to OpenVPN Server
 summary: |
   Connect to OpenVPN Server
 description: |
@@ -35,31 +35,36 @@ inputs:
   - host:
     opts:
       title: "Open VPN Server Host"
-      summary: "Open VPN Server Host"
+      summary: "Open VPN Server IP or Hostname"
       description: |
         ex1. 111.111.111.111
         ex2. hoge.com
       is_expand: true
       is_required: true
-      value_options: []
+  - port: 1194
+    opts:
+      title: "Open VPN Server Port"
+      summary: "Open VPN Server Port number"
+      is_expand: true
+      is_required: true
   - ca_crt:
     opts:
       title: "Base64 encorded CA Certificate"
       summary: "Base64 encorded CA Certificate"
       is_expand: true
       is_required: true
-      value_options: []
+      is_sensitive: true
   - client_crt:
     opts:
       title: "Base64 encorded Client Certificate"
       summary: "Base64 encorded Client Certificate"
       is_expand: true
       is_required: true
-      value_options: []
+      is_sensitive: true
   - client_key:
     opts:
       title: "Base64 encorded Client Private Key"
       summary: "Base64 encorded Client Private Key"
       is_expand: true
       is_required: true
-      value_options: []
+      is_sensitive: true
