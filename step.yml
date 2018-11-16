@@ -1,9 +1,17 @@
 title: |-
   Connect to OpenVPN Server
 summary: |
-  Connect to OpenVPN Server
+  Establish a VPN connection with the specified OpenVPN server.
 description: |
-  Connect to OpenVPN Server
+  Before using this step, you need to build an OpenVPN server in advance.
+  This article is helpful for how to construct OpenVPN server.
+  https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-18-04
+
+
+  After building the VPN server, you need to register the contents of CA certificate, client certificate, client private key, base64 encoded as Bitrise Secret.
+  You can easily retrieve the contents of Base64 with the following command.
+
+  # base64 <certificate or private key file path>
 website: https://github.com/justice3120/bitrise-step-open-vpn
 source_code_url: https://github.com/justice3120/bitrise-step-open-vpn
 support_url: https://github.com/justice3120/bitrise-step-open-vpn/issues
@@ -37,6 +45,7 @@ inputs:
       title: "Host"
       summary: "Open VPN Server IP or Hostname"
       description: |
+        Open VPN Server IP or Hostname.
         ex1. 111.111.111.111
         ex2. hoge.com
       is_expand: true

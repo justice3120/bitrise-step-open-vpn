@@ -1,6 +1,6 @@
-# open-vpn
+# Connect to OpenVPN Server step
 
-Connect to OpenVPN Server
+Establish a VPN connection with the specified OpenVPN server.
 
 
 ## How to use this Step
