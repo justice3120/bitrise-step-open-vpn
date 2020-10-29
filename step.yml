@@ -12,12 +12,9 @@ description: |
   You can easily retrieve the contents of Base64 with the following command.
 
   `$ base64 <certificate or private key file path>`
-website: https://github.com/justice3120/bitrise-step-open-vpn
-source_code_url: https://github.com/justice3120/bitrise-step-open-vpn
-support_url: https://github.com/justice3120/bitrise-step-open-vpn/issues
-host_os_tags:
-  - osx-10.10
-  - ubuntu-16.04
+website: https://github.com/bitrise-steplib/bitrise-step-open-vpn
+source_code_url: https://github.com/bitrise-steplib/bitrise-step-open-vpn
+support_url: https://github.com/bitrise-steplib/bitrise-step-open-vpn/issues
 
 type_tags:
   - access-control
@@ -29,11 +26,10 @@ run_if: ""
 
 deps:
   brew:
-  - name: openvpn
+    - name: openvpn
   apt_get:
-  - name: openvpn
-  - name: net-tools
-
+    - name: openvpn
+    - name: net-tools
 
 toolkit:
   bash:
