@@ -15,9 +15,6 @@ description: |
 website: https://github.com/bitrise-steplib/bitrise-step-open-vpn
 source_code_url: https://github.com/bitrise-steplib/bitrise-step-open-vpn
 support_url: https://github.com/bitrise-steplib/bitrise-step-open-vpn/issues
-host_os_tags:
-  - osx-10.10
-  - ubuntu-16.04
 
 type_tags:
   - access-control
