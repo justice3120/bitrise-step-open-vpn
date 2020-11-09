@@ -30,9 +30,13 @@ EOF
 
     if ifconfig | grep tun0 > /dev/null
     then
-      echo "VPN connection succeeded"
+      echo "VPN tunnel opened successfully"
+      echo ""
+      echo "Test VPN connection"
+      ping -c 1 -t 5 10.1.0.1
+      echo "Connection alive"
     else
-      echo "VPN connection failed!"
+      echo "VPN opening tunnel failed!"
       exit 1
     fi
     ;;
@@ -49,9 +53,13 @@ EOF
 
     if ifconfig -l | grep utun0 > /dev/null
     then
-      echo "VPN connection succeeded"
+      echo "VPN tunnel opened successfully"
+      echo ""
+      echo "Test VPN connection"
+      ping -c 1 -t 5 10.1.0.1
+      echo "Connection alive"
     else
-      echo "VPN connection failed!"
+      echo "VPN opening tunnel failed!"
       exit 1
     fi
     ;;
